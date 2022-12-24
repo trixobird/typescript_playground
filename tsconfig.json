@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "outDir": "dist",
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": ".dist",
+    "rootDir": "src",
     "sourceMap": true,
+    "skipLibCheck": true,
+    "strict": true,
     "strictNullChecks": true,
-    "rootDir": "src"
-  }
+    "target": "ES2022"
+  },
+  "include": [".eslintrc.js", "./src/**/*"]
 }
