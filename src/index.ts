@@ -1,3 +1,3 @@
-import { logger } from "./config/logger";
+import { logger } from './config/logger';
 
-logger.info("Hello World");
+logger.info('Hello World');
