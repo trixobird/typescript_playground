@@ -4,7 +4,7 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "dist",
-    "rootDir": "",
+    "rootDir": "src",
     "sourceMap": true,
     "skipLibCheck": true,
     "strict": true,
@@ -12,6 +12,7 @@
     "target": "ES2022"
   },
   "include": [
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "./src/**/*"
   ]
 }
