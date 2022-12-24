@@ -1,6 +1,9 @@
 {
   "name": "helloworld",
   "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts"
+  },
   "dependencies": {},
   "devDependencies": {
     "typescript": "^4.9.4"
