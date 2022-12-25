@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev core/src/index.ts",
+    "dev": "ts-node-dev packages/logger/src/index.ts",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --fix --ext .ts",
     "prettier:fix": "prettier --write ."
   },
   "private": true,
   "workspaces": [
-    "core",
-    "api"
+    "servers/*",
+    "packages/*"
   ]
 }

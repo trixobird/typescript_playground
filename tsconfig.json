@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
+    "lib": ["ES2021"],
     "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "dist",
@@ -12,6 +13,7 @@
     "target": "ES2022"
   },
   "include": [
-    ".eslintrc.js"
-  ]
+    "./**/*"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

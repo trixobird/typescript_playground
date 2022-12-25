@@ -1,6 +1,6 @@
 import express from 'express';
-import { logger } from '@hello-typescript/core/src/config/logger';
-import { message } from '@hello-typescript/core/src/helpers/message';
+import { logger } from '@hello-typescript/logger/src/config/logger';
+import { message } from '@hello-typescript/logger/src/helpers/message';
 
 const app = express();
 
