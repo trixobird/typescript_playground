@@ -1,18 +1,10 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
     "outDir": "dist",
-    "rootDir": "src",
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "target": "ES2022"
+    "rootDir": "src"
   },
+  "extends": "@hello-typescript/config/tsconfig.json",
   "include": [
-    ".eslintrc.js",
-    "./src/**/*"
+    "./src/**/*.ts"
   ]
 }

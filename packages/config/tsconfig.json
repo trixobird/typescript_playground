@@ -4,16 +4,11 @@
     "lib": ["ES2021"],
     "module": "CommonJS",
     "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": "",
     "sourceMap": true,
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
     "target": "ES2022"
   },
-  "include": [
-    "./**/*"
-  ],
   "exclude": ["node_modules", "dist"]
 }
