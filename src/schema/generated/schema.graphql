@@ -1,0 +1,149 @@
+type AuthForbiddenError implements Error {
+  message: String!
+}
+
+type BaseError implements Error {
+  message: String!
+}
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+interface Error {
+  message: String!
+}
+
+type ExternalIntegration {
+  revokeUrl: String
+}
+
+type ForgetPassword {
+  createdAt: Date!
+  id: ID!
+  token: String!
+  updatedAt: Date!
+  user: User!
+}
+
+type GenerateGoogleAuthUrlResponse {
+  url: String!
+}
+
+type Integration {
+  external: ExternalIntegration
+  image: String!
+  name: String!
+  status: IntegrationStatus!
+  type: IntegrationType!
+}
+
+enum IntegrationStatus {
+  COMING_SOON
+  CONNECTED
+  EXPIRED
+  NOT_CONNECTED
+}
+
+enum IntegrationType {
+  EBAY
+  MYSLABS
+  PWCC
+  SHOPIFY
+  SQUARE
+  WHATNOT
+}
+
+type LengthError implements Error {
+  message: String!
+  minLength: Int!
+}
+
+type Location {
+  createdAt: Date!
+  id: ID!
+  isPrimary: Boolean!
+  name: String!
+  organization: Organization!
+  organizationId: ID!
+  updatedAt: Date!
+}
+
+type Mutation {
+  forgetPassword(email: String!): ForgetPassword!
+  googleLoginSignup(code: String!): TokenDto!
+  integrationAuthCallback(code: String!, type: IntegrationType!): Boolean!
+  integrationDisconnect(type: IntegrationType!): Boolean!
+  integrationRefreshAccessToken(type: IntegrationType!): Boolean!
+  integrationSync(type: IntegrationType!): Boolean!
+  login(email: String!, password: String!): TokenDto!
+  resetPassword(password: String, token: String!): User!
+  signup(email: String!, firstName: String!, lastName: String!, password: String!): TokenDto!
+  updateUser(firstName: String, lastName: String, newPassword: String, oldPassword: String): User!
+}
+
+type Organization {
+  createdAt: Date!
+  id: ID!
+  locations: [Location!]!
+  name: String!
+  updatedAt: Date!
+  users: [User!]!
+}
+
+type PrismaClientKnownRequestError implements Error {
+  code: String!
+  message: String!
+}
+
+type Query {
+  generateGoogleAuthUrl(state: String!): GenerateGoogleAuthUrlResponse!
+  integrationAuthUrl(type: IntegrationType!): SquareAuthUrlResponse!
+  integrations: QueryIntegrationsResult!
+  me: User!
+}
+
+union QueryIntegrationsResult = AuthForbiddenError | LengthError | QueryIntegrationsSuccess
+
+type QueryIntegrationsSuccess {
+  data: [Integration!]!
+}
+
+type Role {
+  name: String!
+}
+
+type SquareAuthUrlResponse {
+  isExternal: Boolean!
+  state: String!
+  url: String!
+}
+
+type TokenDto {
+  token: String!
+  user: User!
+}
+
+type User {
+  createdAt: Date!
+  email: String!
+  firstName: String!
+  forgetPassword: ForgetPassword
+  id: ID!
+  lastName: String!
+  organization: Organization!
+  organizationId: ID!
+  roles: [Role!]!
+  updatedAt: Date!
+}
+
+type ZodError implements Error {
+  fieldErrors: [ZodFieldError!]!
+  message: String!
+}
+
+type ZodFieldError {
+  message: String!
+  path: [String!]!
+}
