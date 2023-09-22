@@ -6,34 +6,35 @@
   "scripts": {
     "build": "servers/api/node_modules/.bin/tsc",
     "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
-    "codegen": "graphql-codegen-esm --config src/schema/codegen.ts"
+    "codegen": "graphql-codegen-esm --config src/schema/codegen.ts",
+    "update": "pnpm update --latest"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.10",
+    "@babel/core": "^7.22.20",
     "@graphql-codegen/cli": "^5.0.0",
     "@graphql-codegen/client-preset": "^4.1.0",
     "@graphql-codegen/typescript-generic-sdk": "^3.1.0",
     "@graphql-codegen/typescript-operations": "^4.0.1",
     "@graphql-codegen/typescript-react-query": "^4.1.0",
-    "@types/node": "20.5.0",
+    "@types/node": "20.6.3",
     "cross-env": "7.0.3",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   },
   "dependencies": {
     "@graphql-tools/schema": "10.0.0",
     "@graphql-yoga/plugin-disable-introspection": "^1.0.4",
-    "@pothos/core": "^3.33.0",
+    "@pothos/core": "^3.37.0",
     "@pothos/plugin-errors": "^3.11.1",
-    "@pothos/plugin-relay": "^3.43.1",
+    "@pothos/plugin-relay": "^3.44.0",
     "@pothos/plugin-scope-auth": "^3.20.0",
     "@pothos/plugin-simple-objects": "^3.7.0",
     "@pothos/plugin-validation": "^3.10.0",
     "dotenv": "^16.3.1",
-    "graphql": "16.8.0",
+    "graphql": "16.8.1",
     "graphql-scalars": "1.22.2",
     "graphql-yoga": "4.0.4",
-    "zod": "^3.22.0"
+    "zod": "^3.22.2"
   }
 }
