@@ -5,12 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "servers/api/node_modules/.bin/tsc",
-    "dev": "ts-node-dev src/index.ts"
-  },
-  "dependencies": {
+    "dev": "ts-node-dev src/index.ts",
+    "update": "pnpm update --latest"
   },
   "devDependencies": {
-    "@types/node": "^20.6.2",
+    "@types/node": "^20.6.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
   }
